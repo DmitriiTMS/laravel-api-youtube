@@ -5,13 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Chanel extends Model
+class Video extends Model
 {
     use HasFactory;
-    protected $table = 'chanels';
 
-    public function video()
+    public function chanel()
     {
-        return $this->hasMany(Video::class, 'chanel_id', 'id');
+        return $this->belongsTo(Chanel::class, 'chanel_id', 'id');
     }
 }
